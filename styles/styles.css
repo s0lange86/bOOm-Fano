@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&family=Press+Start+2P&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ORDENO EL CONTENIDO DEL SITIO:*/
+
+.grilla{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer"
+    ;
+
+    background-color: #ffe8ff;
+    color: #807182;
+    font-family: 'Nunito', sans-serif;
+    padding: 0 5%;
+
+}
+
+/* HEADER: */
+
+.header{
+    grid-area: header;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-image: url(../images/Fondo10.jpg);
+    background-size: cover;
+    background-position:center;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: #807182;
+    font-weight:bold;
+}
+
+.iconsNav{
+    text-align: right;
+    padding-top: 10px;
+}
+
+.icon{
+    color: #807182;
+    font-size: 1.5rem;
+    margin: 2.3px;
+}
+
+.nombreDelSitio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.nombreDelSitio__logo{
+    width: 200px;
+    height: 200px;
+}
+
+
+.nombreDelSitio__tittle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: black;
+    text-shadow: 4px 4px 4px #525050;
+}
+
+
+.nombreDelSitio__tittle p{
+    margin: 5px;
+}
+
+.search{
+    width: 50%;
+}
+
+.search__input{
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 1rem;
+    padding: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 5px 15px;
+}
+
+
+/* CONTENIDO PRINCIPAL Y MENU DE CONTENIDO: */
+
+.main{
+    grid-area: main;
+    display: grid;
+    
+    grid-template-areas:
+    "menu content"
+    ;
+    grid-template-columns: 1fr 6fr;
+}
+
+/* menu */
+
+.menu{
+    grid-area: menu;
+    padding: 0 1em;
+}
+
+.menu .lista{
+    list-style: none;
+    padding-top: 1em;
+}
+
+.lista__item{
+    padding: 1em 0;
+}
+
+/* contenido sugerido */
+
+.content{
+    grid-area: content;
+    padding: 0 1em 1em 0;
+}
+
+
+.content__wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+
+.img{
+    border-radius: 5px;
+}
+
+.content h2{
+    padding-bottom: 0.5em;
+}
+
+.game{
+    padding: 1em;
+    text-align: center;
+}
+
+
+.game a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+
+/* PIE DE PAGINA: */
+
+.footer{
+    grid-area: footer;
+
+    display: flex;
+    justify-content: space-between;
+    top: 100%;
+    font-weight: bold;
+    padding-top: 10px;
+    border-top: solid 1px grey;
+}
+
+
+/* ESTILOS DE LOS HTML X GENERO */
+
+.content__genero__wrapper{
+    display: grid;
+    grid-template-areas:
+    "game game"
+    "game game"
+    ;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap:15px;
+
+
+}
+
+.game__genero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    box-shadow: 2px 4px 4px 2px #b1afaf;
+}
+
+.game__genero .img{
+    width: 50%;
+    height: auto;
+}
+
+.game__genero__info{
+    padding-top: 1em;
+}
+
+.game__genero__info p{
+    margin-bottom: 1em;
+}
+
+.game__genero__info ul{
+    padding-left: 1em;
+}
+
+.game__genero__info__lista li{
+    margin-bottom: 1em;
+}
+
+.button{
+    border: none;
+    padding: 5px;
+    width: 80px;
+    height: 25px;
+    border-radius: 8px;
+}
+
+
+
+/* MEDIA QUERIES */
+
+/* vista tablet:*/
+
+@media (max-width:768px){
+
+    /* INDEX HTML */
+    .main{
+        grid-template-areas:
+        "menu"
+        "content"
+        ;
+
+        grid-template-columns: 1fr;
+    }
+
+    .menu h2{
+        display: none;
+    }
+
+    .menu .lista{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 0;
+    }
+
+    .content{
+        padding-top: 1em;
+        border-top: solid 1px grey;
+    }
+
+    .content__wrapper{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .nombreDelSitio__tittle{
+        font-size: 1.5em;
+    }
+
+    .nombreDelSitio__logo{
+        width: 150px;
+        height: 150px;
+    }
+
+    .search{
+        width: 70%;
+    }
+
+
+}
+
+
+/* vista mobile: */
+
+@media (max-width:480px){
+
+    /* INDEX HTML */
+    .grilla{
+        grid-template-areas:
+        "header"
+        "main"
+        "footer"
+        ;
+    }
+
+    .main{
+        grid-template-areas:
+        "menu"
+        "content"
+        ;
+
+        grid-template-columns: 1fr;
+    }
+
+    .content{
+        padding-top: 1em;
+        border-top: solid 1px grey;
+    }
+
+    .content h2{
+        text-align: center;
+    }
+
+    .content__wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .nombreDelSitio__tittle{
+        font-size: 1em;
+    }
+
+    .nombreDelSitio__logo{
+        width: 100px;
+        height: 100px;
+    }
+
+    .search{
+        width: 90%;
+    }
+
+
+    /* RESTO DE HTMLS DE CADA CATEGORIA: */
+
+    .content__genero__wrapper{
+        grid-template-areas:
+        "game"
+        ;
+
+    grid-template-columns: 1fr;
+    }
+    
+}
