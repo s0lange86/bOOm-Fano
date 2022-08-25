@@ -154,7 +154,17 @@ a{
     padding: 1em 0;
 }
 
-.lista__item:hover{
+/* .lista__item:hover{
+    transition: 0.35s;
+    cursor: pointer;
+    transform: scale(1.05);
+} */
+
+.nav-link{
+    margin-bottom: 1em;
+}
+
+.nav-link:hover{
     transition: 0.35s;
     cursor: pointer;
     transform: scale(1.05);
@@ -164,6 +174,7 @@ a{
 
 .content{
     grid-area: content;
+    /* padding: 0 5em; */
 }
 
 
@@ -173,6 +184,41 @@ a{
     justify-items: center;
 }
 
+.content__titulo{
+    text-align: center;
+}
+
+/* cards!!! */
+.cards-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}
+
+
+.card-title{
+    text-align: center;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    width:8%;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    opacity: 1;
+}
+
+.btn-primary{
+    background-color: rgb(65, 65, 65);
+    border: none;
+}
+
+/* finaliza cards */
 
 .img{
     border-radius: 5px;
@@ -228,6 +274,7 @@ a{
     grid-template-columns: repeat(2, 1fr);
     gap:15px;
 
+    justify-content: center;
 
 }
 
@@ -260,17 +307,58 @@ a{
     margin-bottom: 1em;
 }
 
-.button{
-    border: none;
-    padding: 5px;
-    width: 80px;
-    height: 25px;
-    border-radius: 8px;
+.boton__genero{
+    margin-top: auto;
 }
 
 
 
 /* MEDIA QUERIES */
+
+@media (max-width:1230px){
+    .grilla{
+        padding: 0;
+    }
+}
+
+
+@media (max-width:1073px){
+
+    .main{
+        grid-template-areas:
+        "menu"
+        "content"
+        ;
+
+        grid-template-columns: 1fr;
+    }
+
+    .menu{
+        display: flex;
+    }
+
+    .lista{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navbar-nav{
+        margin: 0;
+    }
+
+}
+
+@media(max-width:887px){
+    .card{
+        margin-top: 2em;
+    }
+
+    .card:not(:first-child){
+        display: none;
+    }
+}
+
+
 
 /* vista tablet:*/
 
@@ -304,6 +392,8 @@ a{
     .content__wrapper{
         grid-template-columns: repeat(2, 1fr);
     }
+
+       
     
     .nombreDelSitio__tittle{
         font-size: 1.5em;
