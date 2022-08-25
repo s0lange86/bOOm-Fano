@@ -7,6 +7,7 @@
     <title>bOOm</title>
     <script src="https://kit.fontawesome.com/74b6cb3f87.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
@@ -37,7 +38,7 @@
         
         <!-- menu vertical de categorias (lado izquierdo) -->
         <main class="main">
-            <nav class="menu">
+            <!-- <nav class="menu">
                 <h2>GENEROS</h2>
                 <ul class="lista">
                     <li class="lista__item"><a href="./index.html">INICIO</a></li>
@@ -45,6 +46,28 @@
                     <li class="lista__item"><a href="./estrategia.html">ESTRATEGIA</a></li>
                     <li class="lista__item"><a href="./rol.html">ROL</a></li>                
                 </ul>
+            </nav> -->
+
+            <nav class="navbar navbar-expand-sm bg-light menu">
+                <h2>GENEROS</h2>
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item lista">
+                        <a class="nav-link active" aria-current="page" href="./index.html">INICIO</a>
+                        <a class="nav-link active" aria-current="page" href="./carreras.html">CARRERAS</a>
+                        <a class="nav-link active" aria-current="page" href="./estrategia.html">ESTRATEGIA</a>
+                        <a class="nav-link active" aria-current="page" href="./rol.html">ROL</a>
+                      </li>
+                      <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li> -->
+                    </ul>
+                  </div>
+                </div>
             </nav>
             
             
@@ -149,5 +172,7 @@
             </div>
         </footer>
     </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>  
 </body>
 </html>

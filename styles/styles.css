@@ -141,6 +141,8 @@ a{
 .menu{
     grid-area: menu;
     padding: 0 1em;
+    display:inline-block;
+
 }
 
 .menu .lista{
@@ -162,7 +164,6 @@ a{
 
 .content{
     grid-area: content;
-    padding: 0 1em 1em 0;
 }
 
 
@@ -323,7 +324,7 @@ a{
 
 /* vista mobile: */
 
-@media (max-width:480px){
+@media (max-width:576px){
 
     /* INDEX HTML */
     .grilla{
@@ -341,15 +342,28 @@ a{
         ;
 
         grid-template-columns: 1fr;
+
+        position: relative;
     }
 
-    .content{
+    .menu{
+        position: absolute;
         padding-top: 1em;
-        border-top: solid 1px grey;
+    }
+
+    .lista{
+        display: flex;
+    }
+
+
+    .content{
+        padding:0;
+        padding-top: 2.8em;
+        border-top: none;
     }
 
     .content h2{
-        text-align: center;
+        display: none;
     }
 
     .content__wrapper{
