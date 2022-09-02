@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&family=Press+Start+2P&display=swap');
+
+$color-fuente:#807182;
+$fuente-general: 'Nunito', sans-serif;
+$fondo-sitio: linear-gradient(-775deg, #86e2e1 0%, #C5C1FF 56%, #f5d4d8 100%);
+
+// MEDIA QUERIES
+$vista-desk1: 1230px;
+$vista-desk2: 1073px;
+$vista-desk3: 887px;
+$vista-tablet: 768px;
+$vista-mobile: 576px;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ORDENO EL CONTENIDO DEL SITIO:*/
+
+.grilla{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $color-fuente;
+    font-family: $fuente-general;
+    padding: 0 5%;
+    
+    // fondo con gradiente de colores
+    background-image: $fondo-sitio;
+
+    /* height: 100vh; */
+    width: 100vw;
+
+    a{
+        text-decoration: none;
+        // color: $color-fuente;
+        font-weight:bold;
+    }
+
+    .icon{
+        color: #807182;
+        font-size: 1.5rem;
+        margin: 2.8px;
+
+        .fas:hover{
+            transition: 0.35s;
+            cursor: pointer;
+            transform: scale(1.3);
+        }
+
+        .fab:hover{
+            transition: 0.35s;
+            cursor: pointer;
+            transform: scale(1.3);
+        }
+    }
+
+    @media (max-width: $vista-desk1){
+        padding: 0;
+    }
+
+    // HEADER
+    .header{
+        .iconsNav{
+            text-align: right;
+            padding-top: 10px;
+        }
+
+        .hero{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 10px;
+            background-image: url(../images/Fondo10.jpg);
+            background-size: cover;
+            background-position:center;
+            border-radius: 5px;
+
+            .nombreDelSitio{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                .nombreDelSitio__logo{
+                    width: 200px;
+                    height: 200px;
+
+                    @media (max-width: $vista-tablet){
+                        width: 150px;
+                        height: 150px;
+                    }
+
+                    @media (max-width: $vista-mobile){
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+
+                .nombreDelSitio__tittle{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-family: 'Press Start 2P', cursive;
+                    font-size: 2rem;
+                    color: black;
+                    text-shadow: 4px 4px 4px #525050;
+
+                    .animate__animated.animate__rubberBand{
+                        --animate-duration: 1s;
+                    }
+
+                    p{
+                        margin: 5px;
+                    }
+
+                    @media (max-width: $vista-tablet){
+                        font-size: 1.5em;
+                    }
+
+                    @media (max-width: $vista-mobile){
+                        font-size: 1em;
+                    }
+                }
+            }
+
+            .search{
+                width: 50%;
+
+                .search__input{
+                    border: none;
+                    border-radius: 25px;
+                    width: 100%;
+                    font-size: 1rem;
+                    padding: 5px;
+                    font-weight: bold;
+                    margin-top: 20px;
+                    padding: 5px 15px;
+                }
+
+                @media (max-width: $vista-tablet){
+                    width: 70%;
+                }
+
+                @media (max-width: $vista-mobile){
+                    width: 90%;
+                }
+            }
+        }
+        
+    }
+    
+    // MENU Y CONTENIDO PRINCIPAL:
+    .main{
+        grid-area: main;
+        display: grid;
+        
+        grid-template-areas:
+        "menu content"
+        ;
+        grid-template-columns: 1fr 6fr;
+        height: 100%;
+
+        // MENU
+        .menu{
+            grid-area: menu;
+            padding: 0 1em;
+            display:inline-block;
+
+            .genero__titulo{
+                @media (max-width: $vista-tablet){
+                    display: none;
+                }
+            }
+
+            .navbar-nav{                
+                .lista{
+                    list-style: none;
+                    padding-top: 1em;
+    
+                    .nav-link{
+                        margin-bottom: 1em;
+    
+                        &:hover{
+                            transition: 0.35s;
+                            cursor: pointer;
+                            transform: scale(1.05);
+                        }
+                    }
+    
+                    @media (max-width: $vista-desk2){
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center
+                    }
+
+                    @media (max-width: $vista-tablet){
+                        padding-top: 0;
+                    }
+
+                    @media (max-width: $vista-mobile){
+                        display: flex;
+                    }
+                }
+
+                @media (max-width: $vista-desk2){
+                    margin: 0;
+                }
+            }
+
+            @media (max-width: $vista-desk2){
+                display: flex;
+            }
+        }
+
+        // CONTENIDO PRINCIPAL
+        .content{
+            grid-area: content;
+            /* padding: 0 5em; */
+            
+            .content__titulo{
+                text-align: center;
+                padding-bottom: 0.5em;
+            }
+
+            // CARDS
+            .cards-wrapper{
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 1em;
+
+                .card{
+                    .card-title{
+                        text-align: center;
+                    }
+    
+                    .card-body{
+                        display: flex;
+                        flex-direction: column;
+    
+                        .btn-primary{
+                            background-color: rgb(65, 65, 65);
+                            border: none;
+                        }
+                    }
+
+                    @media (max-width: $vista-desk3){
+                        margin-top: 2em;
+
+                        &:not(:first-child){
+                            display: none;
+                        }
+                    }
+                }
+
+            }
+
+            // BOTONES IZQ Y DER DEL CAROUSEL
+            .carousel-control-next, .carousel-control-prev{
+                width:8%;
+                .carousel-control-next-icon, .carousel-control-prev-icon{
+                    opacity: 1;
+                }
+            }
+
+            // ESTILOS DE LOS HTML X GENERO
+            .content__genero__wrapper{
+                display: grid;
+
+                // VER ESTO PORQUE MEPA QUE NO NO APLICA
+                grid-template-areas:
+                "game game"
+                "game game"
+                ;
+            
+                grid-template-columns: repeat(2, 1fr);
+                gap:15px;
+            
+                justify-content: center;
+
+                .game__genero{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 1em;
+                    box-shadow: 2px 4px 4px 2px #b1afaf;
+
+                    .img{
+                        width: 50%;
+                        height: auto;
+                    }
+
+                    .game__genero__info{
+                        padding-top: 1em;
+
+                        p{
+                            margin-bottom: 1em;
+                        }
+
+                        .game__genero__info__lista{
+                            padding-left: 1em;
+
+                        }
+                    }
+
+                    .boton__genero{
+                        margin-top: auto;
+                    }
+                }
+                
+                @media (max-width: $vista-mobile){
+                    grid-template-areas:
+                    "game"
+                    ;
+
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (max-width: $vista-desk2){
+                padding-top: 1em;
+                border-top: solid 1px grey;
+            }
+
+            @media (max-width: $vista-mobile){
+                padding: 0;
+                border-top: none;
+            }
+        }
+
+        @media (max-width: $vista-desk2){
+            grid-template-areas:
+            "menu"
+            "content"
+            ;
+
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // PIE DE PAGINA
+    .footer{
+        grid-area: footer;
+    
+        display: flex;
+        justify-content: space-between;
+        top: 100%;
+        font-weight: bold;
+        padding-top: 10px;
+        border-top: solid 1px grey;
+    }
+}
+
