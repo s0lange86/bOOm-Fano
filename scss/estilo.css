@@ -321,7 +321,8 @@
 .grilla .main .content .content__genero__wrapper {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "game game" "game game";
+      grid-template-areas: "game game"
+ "game game";
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   gap: 15px;
@@ -391,7 +392,8 @@
 
 @media (max-width: 1073px) {
   .grilla .main {
-        grid-template-areas: "menu" "content";
+        grid-template-areas: "menu"
+ "content";
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
